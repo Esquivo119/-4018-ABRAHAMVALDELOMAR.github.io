@@ -1,8 +1,8 @@
 // Función de login que valida el nombre de usuario y contraseña
 function login() {
     // Usuario y contraseña de prueba
-    const validUsername = "admin";
-    const validPassword = "1234";
+    const validUsername = "123subdirectora";
+    const validPassword = "abrahamvaldelomar";
 
     // Obtenemos los valores del formulario
     const username = document.getElementById("username").value;
