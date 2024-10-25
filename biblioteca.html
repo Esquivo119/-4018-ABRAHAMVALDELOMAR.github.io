@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca del Colegio</title>
+    <link rel="stylesheet" href="stylesbli.css">
+</head>
+<body>
+    <h1>Biblioteca del Colegio</h1>
+    <form id="bookForm">
+        <input type="text" id="title" placeholder="Título" required>
+        <input type="text" id="author" placeholder="Autor" required>
+        <textarea id="description" placeholder="Descripción" required></textarea>
+        <input type="file" id="pdf" accept="application/pdf" required>
+        <button type="submit">Agregar Libro</button>
+    </form>
+    <ul id="bookList"></ul>
+    
+    <script src="scriptsbli.js"></script>
+</body>
+</html>
