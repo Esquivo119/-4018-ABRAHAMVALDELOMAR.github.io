@@ -150,4 +150,32 @@ footer {
         padding: 10px;
     }
 }
+/* Estilo general de las imágenes */
+img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%; /* No permite que la imagen se haga más grande que el contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarse */
+}
+
+/* Para el banner de imágenes en dispositivos móviles */
+.banner img {
+    max-height: 250px; /* Limita la altura del banner */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    /* Ajustes para el banner en pantallas pequeñas */
+    .banner img {
+        max-height: 200px; /* Reduce la altura de la imagen del banner en dispositivos móviles */
+        object-fit: contain; /* Asegura que la imagen se ajuste mejor sin recortar */
+    }
+
+    /* Ajustes para el logo en pantallas pequeñas */
+    header .logo img {
+        width: 70%; /* Ajusta el logo al 70% del ancho en dispositivos pequeños */
+        max-width: 150px;
+    }
+}
+
 
