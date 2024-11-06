@@ -1,5 +1,3 @@
-// script.js
-
 // Desplazamiento suave al hacer clic en los enlaces de navegación
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -32,4 +30,30 @@ window.addEventListener('scroll', () => {
 // Cargar una alerta de bienvenida cuando la página esté completamente cargada
 window.addEventListener('load', () => {
     alert('¡Bienvenido al sitio web del colegio I.E. № 4018 Abraham Valdelomar!');
+});
+
+// Detectar si el sitio se está viendo en un dispositivo móvil y ajustar el diseño si es necesario
+function ajustarParaMovil() {
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+        document.body.classList.add('movil');
+    } else {
+        document.body.classList.remove('movil');
+    }
+}
+
+// Ejecutar la función al cargar y cuando se redimensiona la ventana
+window.addEventListener('resize', ajustarParaMovil);
+window.addEventListener('DOMContentLoaded', ajustarParaMovil);
+document.addEventListener("DOMContentLoaded", function() {
+    // Seleccionar el elemento con la clase .mi-clase
+    var elemento = document.querySelector('.mi-clase');
+
+    // Verificar si el elemento existe antes de acceder a classList
+    if (elemento) {
+        elemento.classList.add('nueva-clase');
+    } else {
+        console.warn('El elemento con la clase ".mi-clase" no se encontró.');
+    }
 });
