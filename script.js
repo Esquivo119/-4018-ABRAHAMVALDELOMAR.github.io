@@ -17,7 +17,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 // Resaltar el enlace de navegación correspondiente a la sección visible
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
-    const scrollPosition = window.scrollY + 60; // Ajuste de desplazamiento
+    const scrollPosition = window.scrollY + 60;
 
     sections.forEach(section => {
         if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
@@ -27,30 +27,23 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Cargar una alerta de bienvenida cuando la página esté completamente cargada
+// Mostrar una ventana de alerta con opción de redirección
 window.addEventListener('load', () => {
-    alert('¡Bienvenido al sitio web del colegio I.E. № 4018 Abraham Valdelomar!');
-});
-
-// Detectar si el sitio se está viendo en un dispositivo móvil y ajustar el diseño si es necesario
-function ajustarParaMovil() {
     const isMobile = window.innerWidth <= 768;
 
-    if (isMobile) {
-        document.body.classList.add('movil');
-    } else {
-        document.body.classList.remove('movil');
+    const message = isMobile
+        ? "Estás usando un dispositivo móvil. ¿Deseas ver la versión optimizada para móviles?"
+        : "Bienvenido al sitio web del colegio I.E. № 4018 Abraham Valdelomar. ¿Deseas ver la versión para móviles?";
+
+    if (confirm(message)) {
+        // Redireccionar a `indexCelu.html` si el usuario selecciona "Aceptar"
+        window.location.href = "indexCelu.html";
     }
-}
+});
 
-// Ejecutar la función al cargar y cuando se redimensiona la ventana
-window.addEventListener('resize', ajustarParaMovil);
-window.addEventListener('DOMContentLoaded', ajustarParaMovil);
+// Asegurar que el elemento existe antes de aplicar clase
 document.addEventListener("DOMContentLoaded", function() {
-    // Seleccionar el elemento con la clase .mi-clase
     var elemento = document.querySelector('.mi-clase');
-
-    // Verificar si el elemento existe antes de acceder a classList
     if (elemento) {
         elemento.classList.add('nueva-clase');
     } else {
